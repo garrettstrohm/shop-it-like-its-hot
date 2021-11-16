@@ -21,7 +21,7 @@ function MainPage(){
     return(
         <div>
             <NavBar search={search} setSearch={setSearch}/>
-            <ItemContainer />
+            <ItemContainer items = {items} />
             <Sort />
             <Cart />
             <Filter />
