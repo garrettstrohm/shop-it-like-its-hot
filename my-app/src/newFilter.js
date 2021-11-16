@@ -5,20 +5,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-export default function newFilter({handleCategoryChange}) {
+function NewFilter({handleCategoryChange}) {
   
 
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Filter by Category</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          label="Age"
+          label="category"
           onChange={handleCategoryChange}
         >
-          <MenuItem value="All">Filter by category</MenuItem>
+          <MenuItem value="All">All</MenuItem>
           <MenuItem value="men's clothing">Men's Clothing</MenuItem>
           <MenuItem value="jewelery">Jewelery</MenuItem>
           <MenuItem value="electronics">Electronics</MenuItem>
@@ -28,6 +28,8 @@ export default function newFilter({handleCategoryChange}) {
     </Box>
   );
 }
+
+export default NewFilter
 
 //                 <select name="catFilter" onChange={handleCategoryChange}>
 // //         //         <option value="All">Filter by category</option>

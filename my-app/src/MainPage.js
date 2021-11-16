@@ -1,7 +1,7 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Cart from './Cart'
-import newFilter from './newFilter'
+import NewFilter from './NewFilter'
 import NavBar from './NavBar'
 import {useEffect, useState} from "react"
 
@@ -34,7 +34,7 @@ function MainPage(){
     return(
         <div>
             <NavBar search={search} setSearch={setSearch}/>
-            <newFilter handleCategoryChange={handleCategoryChange}/>
+            <NewFilter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} />
             <Sort />
             <Cart />
