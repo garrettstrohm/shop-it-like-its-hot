@@ -1,7 +1,10 @@
 
 
 function ItemDetails(){
-    return()
+    return(
+        <>
+        </>
+    );
 }
 
 export default ItemDetails
