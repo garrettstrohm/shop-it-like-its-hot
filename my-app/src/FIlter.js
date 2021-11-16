@@ -19,6 +19,7 @@ function Filter({handleCategoryChange}){
               label="Category"
               onChange={handleCategoryChange}
             >
+              <MenuItem value=""><em>None</em></MenuItem>
               <MenuItem value="All">All</MenuItem>
               <MenuItem value="men's clothing">Men's Clothing</MenuItem>
               <MenuItem value="jewelery">Jewelery</MenuItem>
