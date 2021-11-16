@@ -10,7 +10,7 @@ function Filter({handleCategoryChange}){
 
 
     return (
-        <Box mt={2} pl={210} sx={{ 
+        <Box mt={2} ml={210} sx={{ 
             minWidth: 120, 
             maxWidth: 200,
             }}>
