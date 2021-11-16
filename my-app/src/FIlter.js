@@ -1,10 +1,7 @@
 
 
-function Filter(){
+function Filter({handleCategoryChange}){
 
-    function handleCategoryChange(){
-        
-    }
 
     return(
         <div className="Filter">
