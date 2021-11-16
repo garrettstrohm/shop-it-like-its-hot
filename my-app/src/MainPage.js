@@ -5,15 +5,15 @@ import Filter from './Filter'
 import {useEffect, useState} from "react"
 
 function MainPage(){
-    const [products, setProducts] = useState([])
-    const[copyOfProducts, setCopyOfProducts] = useState([])
+    const [items, setItems] = useState([])
+    const[copyOfItems, setCopyOfItems] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3000/products')
         .then(r => r.json())
-        .then(productsArray => {
-            setProducts(productsArray)
-            setCopyOfProducts(productsArray)
+        .then(itemsArray => {
+            setItems(itemsArray)
+            setCopyOfItems(itemsArray)
         })
     }, [])
 
