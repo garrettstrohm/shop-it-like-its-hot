@@ -16,7 +16,7 @@ function Filter(){
                 <option value="women's clothing">Women's Clothing</option>
             </select>
         </div>
-    )
+    );
 }
 
 export default Filter

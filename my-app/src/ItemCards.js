@@ -1,7 +1,10 @@
 import ItemDetails from "./ItemDetails"
 
 function ItemCards(){
-    return()
+    return(
+        <>
+        </>
+    );
 }
 
 export default ItemCards
