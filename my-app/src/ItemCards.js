@@ -5,8 +5,6 @@ import Cart from "./Cart"
 
 function ItemCards({title, price, description, category, image, ratingObj, sendToCart}){
 
-    
-
     return(
         <>
         <div>

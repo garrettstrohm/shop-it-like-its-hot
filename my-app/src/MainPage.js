@@ -4,7 +4,6 @@ import Cart from './Cart'
 import Filter from './Filter'
 import NavBar from './NavBar'
 import {useEffect, useState} from "react"
-import NavBar from "./NavBar.js"
 
 function MainPage(){
     const [items, setItems] = useState([])
