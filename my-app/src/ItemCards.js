@@ -5,8 +5,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
+import Button from '@mui/material/Button';
 import ItemDetails from "./ItemDetails"
 import Cart from "./Cart"
+import {Route, Switch, Link} from 'react'
 
 export default function ItemCards({title, price, description, category, image, ratingObj, sendToCart}){
    
@@ -21,7 +23,7 @@ export default function ItemCards({title, price, description, category, image, r
           />
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
-              <Typography component="div" variant="h5">
+              <Typography component="div" variant="h5">  
                 {title}
               </Typography>
               <Typography variant="subtitle1" color="text.secondary" component="div">
@@ -30,11 +32,12 @@ export default function ItemCards({title, price, description, category, image, r
               <Typography variant="subtitle1" color="text.secondary" component="div">
                 {ratingObj.rate}⭐️ 
               </Typography>
+              <br/>
+              <Button variant="contained">Add To Cart</Button>
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
             </Box>
           </Box>
-          
         </Card>
       );
 }
