@@ -1,6 +1,6 @@
 import React from 'react'
 import MainPage from './MainPage'
-import Navbar from './Navbar'
+import Navbar from './NavBar'
 import Search from './Search'
 
 
