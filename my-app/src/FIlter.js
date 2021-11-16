@@ -10,7 +10,10 @@ function Filter({handleCategoryChange}){
 
 
     return (
-        <Box sx={{ minWidth: 120 }}>
+        <Box mt={2} pl={210} sx={{ 
+            minWidth: 120, 
+            maxWidth: 200,
+            }}>
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Filter by Category</InputLabel>
             <Select
