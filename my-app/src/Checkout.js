@@ -1,7 +1,10 @@
 
 
 function Checkout(){
-    return()
+    return(
+        <>
+        </>
+    );
 }
 
 export default Checkout
