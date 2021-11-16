@@ -4,7 +4,6 @@ import Cart from './Cart'
 import Filter from './Filter'
 import NavBar from './NavBar'
 import {useEffect, useState} from "react"
-import NavBar from './NavBar'
 
 function MainPage(){
     const [items, setItems] = useState([])
@@ -21,17 +20,14 @@ function MainPage(){
         })
     }, [])
 
-    const itemsToDisplay = items.filter(item => item.title.toLowerCase().includes(search.toLowerCase()))
+    const itemsToDisplay = items.filter(item => item.title.toLowerCase().includes(search.toLowerCase())).filter((item) => {
+        if(categorySelect === "All") return true;
+        return item.category === categorySelect
+    })
     
     function handleCategoryChange(event){
         setCategorySelect(event.target.value)
     }
-
-    const itemsToDisplay = items.filter((item) => {
-        if(categorySelect === "All") return true;
-        return item.category === categorySelect
-    })
-
 
 
 
