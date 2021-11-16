@@ -1,7 +1,7 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Cart from './Cart'
-import Filter from './Filter'
+import Filter from './FIlter'
 import NavBar from './NavBar'
 import {useEffect, useState} from "react"
 
