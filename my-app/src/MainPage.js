@@ -19,7 +19,7 @@ function MainPage(){
 
     return(
         <div>
-        <ItemContainer />
+        <ItemContainer items = {items} />
         <Sort />
         <Cart />
         <Filter />
