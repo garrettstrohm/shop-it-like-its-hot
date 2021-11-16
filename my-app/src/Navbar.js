@@ -1,9 +1,9 @@
 import Search from "./Search.js"
 
-function Navbar({search, setSearch}){
+function NavBar({search, setSearch}){
     return(
         <Search search={search} setSearch={setSearch}/>
     );
 }
 
-export default Navbar
+export default NavBar
