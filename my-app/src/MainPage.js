@@ -2,6 +2,7 @@ import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Cart from './Cart'
 import Filter from './Filter'
+import NavBar from './NavBar'
 import {useEffect, useState} from "react"
 import NavBar from "./NavBar.js"
 
@@ -10,7 +11,9 @@ function MainPage(){
     const[copyOfItems, setCopyOfItems] = useState([])
     const [search, setSearch] = useState("")
     const[categorySelect, setCategorySelect] = useState("All")
+    
     console.log(search)
+
     useEffect(() => {
         fetch('http://localhost:4000/products')
         .then(r => r.json())
@@ -20,10 +23,16 @@ function MainPage(){
         })
     }, [])
 
+
     const itemsToDisplay = items.filter(item => item.title.toLowerCase().includes(search.toLowerCase())).filter((item) => {
         if(categorySelect === "All") return true;
         return item.category === categorySelect
     })
+
+ function sendToCart() {
+        console.log("Sending to Cart")
+    }
+
     
     function handleCategoryChange(event){
         setCategorySelect(event.target.value)
@@ -35,7 +44,7 @@ function MainPage(){
         <div>
             <NavBar search={search} setSearch={setSearch}/>
             <Filter handleCategoryChange={handleCategoryChange}/>
-            <ItemContainer items = {itemsToDisplay} />
+            <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
             <Sort />
             <Cart />
         </div>
