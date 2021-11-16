@@ -31,7 +31,7 @@ function Copyright() {
 
 const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
-function getStepContent(step) {
+function getStepContent(step: number) {
   switch (step) {
     case 0:
       return <AddressForm />;
@@ -108,7 +108,6 @@ export default function Checkout() {
                       Back
                     </Button>
                   )}
-
                   <Button
                     variant="contained"
                     onClick={handleNext}
