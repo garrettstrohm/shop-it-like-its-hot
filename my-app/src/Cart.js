@@ -1,7 +1,10 @@
 import Checkout from "./Checkout"
 
 function Cart(){
-    return()
+    return(
+        <>
+        </>
+    );
 }
 
 export default Cart

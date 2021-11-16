@@ -1,7 +1,10 @@
 import ItemCards from "./ItemCards"
 
 function ItemContainer(){
-    return()
+    return(
+        <>
+        </>
+    );
 }
 
 export default ItemContainer
