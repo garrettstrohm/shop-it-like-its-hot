@@ -14,6 +14,7 @@ function Filter({handleCategoryChange}){
             minWidth: 120, 
             maxWidth: 200,
             }}>
+                
           <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Filter by Category</InputLabel>
             <Select
