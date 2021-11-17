@@ -35,22 +35,6 @@ function Copyright() {
   );
 }
 
-// const steps = ['Shipping address', 'Payment details', 'Review your order'];
-
-// function getStepContent(step) {
-
-//   switch (step) {
-//     case 0:
-//       return <AddressForm formData={formData} setFormData={setFormData} />;
-//     case 1:
-//       return <PaymentForm formData={formData} setFormData={setFormData}/>;
-//     case 2:
-//       return <Review />;
-//     default:
-//       throw new Error('Unknown step');
-//   }
-// }
-
 const theme = createTheme();
 
 
@@ -58,6 +42,7 @@ const theme = createTheme();
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [products, setProducts] = useState([])
+  const [orderHistory, setOrderHistory] = useState([])
   const [formData, setFormData] = useState({
     "firstName": "",
     "lastName": "",
@@ -72,6 +57,7 @@ export default function Checkout() {
     "expDate": "",
     "ccv": ""
   })
+
 
   useEffect(() => {
     fetch('http://localhost:4000/cart')
@@ -115,6 +101,22 @@ export default function Checkout() {
     }
   }
 
+  function postToOrderHistory(){
+
+    fetch('http://localhost:4000/orderHistory', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        user: formData,
+        products: products,
+      })
+    })
+    .then(r => r.json())
+    .then(data => setOrderHistory(data))
+  }
+
   const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 function getStepContent(step) {
@@ -136,6 +138,7 @@ function getStepContent(step) {
     if(activeStep < 2){
       handleSubmit(formData)
     } else {
+      postToOrderHistory(products)
       handleSubmit({
         "firstName": "",
         "lastName": "",
