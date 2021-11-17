@@ -6,19 +6,12 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function PaymentForm() {
-const [paymentData, setPaymentData] = useState({
-    cardName: "",
-    cardNumber: "",
-    expDate: "",
-    ccv: ""
-})
+export default function PaymentForm({formData, setFormData}) {
 
     function handleOnChange(e) {
-        setPaymentData({...paymentData, [e.target.name]: e.target.value})
+        setFormData({...formData, [e.target.name]: e.target.value})
     }
 
-    console.log(paymentData)
 
   return (
     <React.Fragment>
@@ -31,7 +24,7 @@ const [paymentData, setPaymentData] = useState({
             required
             id="cardName"
             name="cardName"
-            value={paymentData.cardName}
+            value={formData.cardName}
             label="Name on card"
             fullWidth
             autoComplete="cc-name"
@@ -44,7 +37,7 @@ const [paymentData, setPaymentData] = useState({
             required
             id="cardNumber"
             name="cardNumber"
-            value={paymentData.cardNumber}
+            value={formData.cardNumber}
             label="Card number"
             fullWidth
             autoComplete="cc-number"
@@ -57,7 +50,7 @@ const [paymentData, setPaymentData] = useState({
             required
             id="expDate"
             name="expDate"
-            value={paymentData.expData}
+            value={formData.expData}
             label="Expiry date"
             fullWidth
             autoComplete="cc-exp"
@@ -70,7 +63,7 @@ const [paymentData, setPaymentData] = useState({
             required
             id="cvv"
             name="ccv"
-            value={paymentData.ccv}
+            value={formData.ccv}
             label="CVV"
             helperText="Last three digits on signature strip"
             fullWidth
