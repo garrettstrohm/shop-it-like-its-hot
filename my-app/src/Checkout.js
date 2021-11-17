@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,6 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
+import Cart from './Cart';
 
 
 
@@ -55,6 +56,8 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
+  const [total, setTotal] = useState(0)
+  const [products, setProducts] = useState([])
   const [formData, setFormData] = useState({
     "firstName": "",
     "lastName": "",
@@ -69,6 +72,22 @@ export default function Checkout() {
     "expDate": "",
     "ccv": ""
   })
+
+  useEffect(() => {
+    fetch('http://localhost:4000/cart')
+    .then(r => r.json())
+    .then(productsInCart => {
+      setProducts(productsInCart)
+    })
+  }, [])
+
+  function createTotalPrice(){
+    let total = 0;
+    for(let i = 0; i < products.length; i++) {
+      total += products[i].price;
+    }
+    return total;
+  }
 
   function handleSubmit(formData){
     fetch('http://localhost:4000/user/1', {
@@ -92,7 +111,7 @@ function getStepContent(step) {
     case 1:
       return <PaymentForm formData={formData} setFormData={setFormData}/>;
     case 2:
-      return <Review />;
+      return <Review formData={formData} products={products} totalPrice={createTotalPrice}/>;
     default:
       throw new Error('Unknown step');
   }
