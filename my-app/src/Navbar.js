@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function NavBar({search, setSearch}) {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{boxShadow: "1px 3px 6px 2px #9E9E9E"}}>
         <Toolbar>
           <IconButton
             size="large"

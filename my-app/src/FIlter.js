@@ -18,7 +18,7 @@ function Filter({handleCategoryChange}){
             m: 1,
             }}>
                 
-          <FormControl >
+          <FormControl style={{boxShadow: ".5px 1px 8px .5px #9E9E9E"}}>
             <InputLabel sx={{minWidth:150}} id="demo-simple-select-label">Category</InputLabel>
             <Select
               sx={{minWidth:150}}
