@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import NavBar from './NavBar';
 import Cart from './Cart'
 import Checkout from './Checkout';
+import ItemDetails from './ItemDetails'
 
 function App() {
   const [search, setSearch] = useState("")
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route path="/cart">
           <Cart />
+        </Route>
+        <Route path="/itemdetails/:id">
+          <ItemDetails />
         </Route>
         <Route path="/">
           <MainPage search={search}/>
