@@ -70,7 +70,7 @@ export default function NavBar({search, setSearch}) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Shop It Like It's Hot
           </Typography>
           <Search value={search} onChange={(e) => setSearch(e.target.value)}>
             <SearchIconWrapper>
