@@ -1,12 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 import MainPage from './MainPage'
+import { Route, Switch } from "react-router-dom";
+import NavBar from './NavBar';
+import Cart from './Cart'
+import Checkout from './Checkout';
 
 function App() {
-
+  const [search, setSearch] = useState("")
 
   return (
     <div className="App">
-      <MainPage />
+      <NavBar search={search} setSearch={setSearch}/>
+      <Switch>
+        <Route path="/checkout">
+          <Checkout />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+        <Route path="/">
+          <MainPage search={search}/>
+        </Route>
+      </Switch>
     </div>
   );
 }

@@ -1,14 +1,11 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
-import Cart from './Cart'
-import Filter from './FIlter'
-import NavBar from './NavBar'
+import Filter from './Filter'
 import {useEffect, useState} from "react"
 
-function MainPage(){
+function MainPage({search}){
     const [items, setItems] = useState([])
     const[copyOfItems, setCopyOfItems] = useState([])
-    const [search, setSearch] = useState("")
     const[categorySelect, setCategorySelect] = useState("All")
     
     console.log(search)
@@ -41,11 +38,9 @@ function MainPage(){
 
     return(
         <div>
-            <NavBar search={search} setSearch={setSearch}/>
             <Filter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
             <Sort />
-            <Cart />
         </div>
     )
 }
