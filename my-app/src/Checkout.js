@@ -100,7 +100,24 @@ function getStepContent(step) {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
-    handleSubmit(formData)
+    if(activeStep < 2){
+      handleSubmit(formData)
+    } else {
+      handleSubmit({
+        "firstName": "",
+        "lastName": "",
+        "address1": "",
+        "address2": "",
+        "city": "",
+        "state": "",
+        "zip": "",
+        "country": "",
+        "cardName": "",
+        "cardNumber": "",
+        "expDate": "",
+        "ccv": ""
+      })
+    }
   };
 
   const handleBack = () => {
