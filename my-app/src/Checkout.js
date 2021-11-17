@@ -26,7 +26,8 @@ function Copyright() {
     <Typography variant="body2" color="text.secondary" align="center">
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        
+      Shop It Like It's Hot
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -56,7 +57,6 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [total, setTotal] = useState(0)
   const [products, setProducts] = useState([])
   const [formData, setFormData] = useState({
     "firstName": "",
@@ -98,7 +98,21 @@ export default function Checkout() {
       body: JSON.stringify(formData)
     })
     .then(r => r.json())
-    .then(user => console.log(user))
+    .then(user => setFormData(user))
+  }
+
+  function deleteCartItems(item){
+    fetch(`http://localhost:4000/cart/${item.id}`, {
+      method: "DELETE"
+    })
+    .then(r => r.json())
+    .then(console.log)
+  }
+
+  function emptyCart(products){
+    for(let i = 0; i < products.length; i++) {
+      deleteCartItems(products[i])
+    }
   }
 
   const steps = ['Shipping address', 'Payment details', 'Review your order'];
@@ -136,6 +150,7 @@ function getStepContent(step) {
         "expDate": "",
         "ccv": ""
       })
+      emptyCart(products)
     }
   };
 
@@ -155,11 +170,6 @@ function getStepContent(step) {
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper variant="outlined" sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}>
