@@ -15,13 +15,16 @@ export default function ItemCards({title, price, description, category, image, r
    
 
     return(
+
         <Card style= {{backgroundColor: '#ffffff', border: '1px solid #1976D2', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}} sx={{ display: 'flex', padding: '10px'}}>
+
             <CardMedia
             component="img"
             sx={{ width: 151 }}
             image={image}
             alt="imgAlt"
           />
+
           <Box sx={{ display: 'flex', flexDirection: 'column' }}>
             <CardContent sx={{ flex: '1 0 auto' }}>
               <Switch>  
