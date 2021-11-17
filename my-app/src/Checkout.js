@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useState} from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,6 +17,9 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
 
+
+
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
@@ -29,14 +33,64 @@ function Copyright() {
   );
 }
 
-const steps = ['Shipping address', 'Payment details', 'Review your order'];
+// const steps = ['Shipping address', 'Payment details', 'Review your order'];
+
+// function getStepContent(step) {
+
+//   switch (step) {
+//     case 0:
+//       return <AddressForm formData={formData} setFormData={setFormData} />;
+//     case 1:
+//       return <PaymentForm formData={formData} setFormData={setFormData}/>;
+//     case 2:
+//       return <Review />;
+//     default:
+//       throw new Error('Unknown step');
+//   }
+// }
+
+const theme = createTheme();
+
+
+
+export default function Checkout() {
+  const [activeStep, setActiveStep] = React.useState(0);
+  const [formData, setFormData] = useState({
+    "firstName": "",
+    "lastName": "",
+    "address1": "",
+    "address2": "",
+    "city": "",
+    "state": "",
+    "zip": "",
+    "country": "",
+    "cardName": "",
+    "cardNumber": "",
+    "expDate": "",
+    "ccv": ""
+  })
+
+  function handleSubmit(formData){
+    fetch('http://localhost:4000/user/1', {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(r => r.json())
+    .then(user => console.log(user))
+  }
+
+  const steps = ['Shipping address', 'Payment details', 'Review your order'];
 
 function getStepContent(step) {
+
   switch (step) {
     case 0:
-      return <AddressForm />;
+      return <AddressForm formData={formData} setFormData={setFormData} />;
     case 1:
-      return <PaymentForm />;
+      return <PaymentForm formData={formData} setFormData={setFormData}/>;
     case 2:
       return <Review />;
     default:
@@ -44,13 +98,26 @@ function getStepContent(step) {
   }
 }
 
-const theme = createTheme();
-
-export default function Checkout() {
-  const [activeStep, setActiveStep] = React.useState(0);
-
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if(activeStep < 2){
+      handleSubmit(formData)
+    } else {
+      handleSubmit({
+        "firstName": "",
+        "lastName": "",
+        "address1": "",
+        "address2": "",
+        "city": "",
+        "state": "",
+        "zip": "",
+        "country": "",
+        "cardName": "",
+        "cardNumber": "",
+        "expDate": "",
+        "ccv": ""
+      })
+    }
   };
 
   const handleBack = () => {
