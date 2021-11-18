@@ -10,20 +10,25 @@ function Filter({handleCategoryChange}){
 
 
     return (
-        <Box mt={2} ml={210} sx={{ 
-            minWidth: 120, 
-            maxWidth: 200,
+        <Box m={2} sx={{ 
+            
+            display: 'flex',
+            justifyContent: 'flex-end',
+            
             }}>
                 
-          <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Filter by Category</InputLabel>
+          <FormControl >
+            <InputLabel id="demo-simple-select-label">Category</InputLabel>
             <Select
+              sx={{
+                minWidth: 200
+              }}
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Category"
               onChange={handleCategoryChange}
             >
-              <MenuItem value=""><em>None</em></MenuItem>
+  
               <MenuItem value="All">All</MenuItem>
               <MenuItem value="men's clothing">Men's Clothing</MenuItem>
               <MenuItem value="jewelery">Jewelery</MenuItem>

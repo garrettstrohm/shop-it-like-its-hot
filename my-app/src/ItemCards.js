@@ -7,13 +7,14 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemDetails from "./ItemDetails"
 import Cart from "./Cart"
+import { borderRadius } from '@mui/system';
 
 export default function ItemCards({title, price, description, category, image, ratingObj, sendToCart}){
    
 
     return(
-        <Card style= {{backgroundColor: '#ffffff', border: '1px solid #1976D2'}}sx={{ display: 'flex', padding: '10px'}}>
-            <CardMedia
+      <Card style={{backgroundColor: '#ffffff', border: '1px solid #1976D2', borderRadius: '10px', margin:'10px'}} sx={{display: 'flex', padding: '10px' }}>
+      <CardMedia
             component="img"
             sx={{ width: 151 }}
             image={image}
