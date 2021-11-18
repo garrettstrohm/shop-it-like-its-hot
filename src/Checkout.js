@@ -59,14 +59,6 @@ export default function Checkout() {
   })
 
 
-  useEffect(() => {
-    fetch('http://localhost:4000/cart')
-    .then(r => r.json())
-    .then(productsInCart => {
-      setCart(productsInCart)
-    })
-  }, [])
-
   function createTotalPrice(){
     let total = 0;
     for(let i = 0; i < cart.length; i++) {
