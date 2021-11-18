@@ -13,6 +13,10 @@ function useFetch(api) {
                 setIsLoaded(true)
             });
     }, []);
+    return {
+        content: content,
+        isLoaded: isLoaded
+    }
 }
 
 export default useFetch;

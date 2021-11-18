@@ -15,7 +15,7 @@
     {
       "id": 2,
       "title": "Mens Casual Premium Slim Fit T-Shirts ",
-      "price": 22.3,
+      "price": 22.35,
       "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, light weight & soft fabric for breathable and comfortable wearing. And Solid stitched shirts with round neck made for durability and a great fit for casual fashion wear and diehard baseball fans. The Henley style round neckline includes a three-button placket.",
       "category": "men's clothing",
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
@@ -241,9 +241,7 @@
       }
     }
   ],
-  
   "cart": [],
-
   "user": [
     {
       "id": 1,
@@ -261,7 +259,6 @@
       "ccv": ""
     }
   ],
-
   "orderHistory": {
     "user": {
       "id": 1,
@@ -275,22 +272,10 @@
       "country": "US",
       "cardName": "Garrett Strohm",
       "cardNumber": "1234123412341234",
-      "expDate": "1234",
-      "ccv": "132"
+      "expDate": "1324",
+      "ccv": "123"
     },
     "products": [
-      {
-        "id": 18,
-        "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
-        "price": 9.85,
-        "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-        "category": "women's clothing",
-        "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-        "rating": {
-          "rate": 4.7,
-          "count": 130
-        }
-      },
       {
         "id": 19,
         "title": "Opna Women's Short Sleeve Moisture",
