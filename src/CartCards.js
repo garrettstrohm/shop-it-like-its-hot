@@ -5,9 +5,11 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
 import Divider from '@mui/material/Divider';
+import { Button } from '@mui/material';
 
-export default function CartCards({title, price, image, rating, description}) {
+export default function CartCards({title, price, image, rating, description, id, handleDelete}) {
   console.log(description)
+
   return (
     <Card style= {{backgroundColor: '#ffffff', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}}sx={{ display: 'flex', padding: '10px'}}>
             <CardMedia
@@ -29,6 +31,7 @@ export default function CartCards({title, price, image, rating, description}) {
               </Typography>
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+              <Button onClick={()=> handleDelete(id)}>Remove From Cart</Button>
             </Box>
           </Box>
           <Divider orientation="vertical" variant="middle" flexItem />
