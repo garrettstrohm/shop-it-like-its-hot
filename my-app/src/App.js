@@ -8,7 +8,7 @@ import ItemDetails from './ItemDetails'
 
 function App() {
   const [search, setSearch] = useState("")
-
+  
   return (
     <div className="App">
       <NavBar search={search} setSearch={setSearch}/>

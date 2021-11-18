@@ -1,6 +1,7 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Filter from './Filter'
+import Cart from './Cart'
 import {useEffect, useState} from "react"
 
 function MainPage({search}){
@@ -25,7 +26,17 @@ function MainPage({search}){
         return item.category === categorySelect
     })
 
- function sendToCart() {
+ function sendToCart(item) {
+    // fetch('http://localhost:4000/cart', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(item)
+    //   })
+    //   .then(res => res.json())
+    //   .then(data => {setCakeList([cake, ...cakeList])
+    //   })
         console.log("Sending to Cart")
     }
 

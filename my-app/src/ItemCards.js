@@ -43,8 +43,8 @@ export default function ItemCards({title, price, description, category, image, r
                 {ratingObj.rate}⭐️ 
               </Typography>
               <br/>
-              <Button variant="contained">
-              <AddShoppingCartIcon/>  Add to Cart  
+              <Button onClick = {sendToCart} variant="contained">
+              <AddShoppingCartIcon  />  Add to Cart  
               </Button>
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>

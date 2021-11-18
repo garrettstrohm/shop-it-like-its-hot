@@ -1,9 +1,16 @@
+
 import Checkout from "./Checkout"
-import {useEffect, useState} from "react"
+import {useEffect, useState, createContext} from "react"
 import CartCards from "./CartCards"
 
-function Cart(){
+const CartContext = createContext()
+
+
+
+function Cart({children}){
     const [cart, setCart] = useState([])
+   return <CartContext.Provider value = {{cart,setCart}}>{children}</CartContext.Provider>
+   
     
     useEffect(() => {
         fetch('http://localhost:4000/cart')
@@ -17,7 +24,9 @@ function Cart(){
         <>
             <div>
                 <h1>Cart</h1>
+                
                 {cartItemsList} 
+                
             </div>
         </>
     );
