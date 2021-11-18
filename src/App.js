@@ -1,3 +1,4 @@
+
 import React, {useState, useContext, useEffect} from 'react'
 import MainPage from './MainPage'
 import { Route, Switch } from "react-router-dom";
@@ -12,11 +13,22 @@ function App() {
   const [search, setSearch] = useState("")
   const {cart, setCart} = useContext(CartContext)
 
-    useEffect(() => {
-        fetch('http://localhost:4000/cart')
-        .then(r => r.json())
-        .then(cartItems => setCart(cartItems))
-    }, [])
+  function sendToCart(id) {
+    console.log("id:",id)
+    fetch(`http://localhost:4000/products/${id}`)
+    .then(r => r.json())
+    .then(item => {
+        console.log(item)
+        setCart([...cart, item])
+        fetch('http://localhost:4000/cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:JSON.stringify(item)
+        })
+    })
+}
 
   return (
     <div className="App">
@@ -32,10 +44,10 @@ function App() {
           <Cart />
         </Route>
         <Route path="/itemdetails/:id">
-          <ItemDetails />
+          <ItemDetails sendToCart = {sendToCart}/>
         </Route>
         <Route path="/">
-          <MainPage search={search}/>
+          <MainPage search={search} sendToCart = {sendToCart}/>
         </Route>
       </Switch>
     </div>
