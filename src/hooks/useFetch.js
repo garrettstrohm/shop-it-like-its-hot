@@ -12,7 +12,7 @@ function useFetch(api) {
                 setContent(data)
                 setIsLoaded(true)
             });
-    }, []);
+    }, [api]);
     return {
         content: content,
         isLoaded: isLoaded

@@ -8,7 +8,7 @@ import Grid from '@mui/material/Grid';
 
 export default function Review({formData, cart, totalPrice}) {
 
-  const { firstName, lastName, address1, address2, city, state, zip, country, cardName, cardNumber, expDate, ccv} = formData
+  const { firstName, lastName, address1, address2, city, state, zip, cardName, cardNumber} = formData
   const lastFourDigits = cardNumber.substr(-4)
 
   return (

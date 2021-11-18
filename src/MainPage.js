@@ -7,9 +7,6 @@ import {useEffect, useState} from "react"
 function MainPage({search, sendToCart}){
     const [items, setItems] = useState([])
     const[categorySelect, setCategorySelect] = useState("All")
-    
-    
-    console.log(search)
 
     useEffect(() => {
         fetch('http://localhost:4000/products')
