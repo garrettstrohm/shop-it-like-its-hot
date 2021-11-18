@@ -41,7 +41,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const {cart, setCart} = useState(CartContext)
+  const {cart, setCart} = useContext(CartContext)
   const [orderHistory, setOrderHistory] = useState([])
   const [formData, setFormData] = useState({
     "firstName": "",
