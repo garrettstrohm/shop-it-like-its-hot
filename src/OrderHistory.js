@@ -12,7 +12,7 @@ export default function OrderHistory() {
 
     const {cart, setCart} = useContext(CartContext)
 
-    const cartItems = cart.map(item => <CartCards title={item.title} price={item.price} image={item.image} rating={item.rating.rate}/>)
+    const cartItems = cart.map(item => <CartCards title={item.title} price={item.price} image={item.image} rating={item.rating.rate} description = {item.description}/>)
 
   return (
     <React.Fragment>

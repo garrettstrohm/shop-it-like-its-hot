@@ -4,10 +4,12 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardMedia } from '@mui/material';
+import Divider from '@mui/material/Divider';
 
-export default function CartCards({title, price, image, rating}) {
+export default function CartCards({title, price, image, rating, description}) {
+  console.log(description)
   return (
-    <Card style= {{backgroundColor: '#ffffff', border: '1px solid #1976D2', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}}sx={{ display: 'flex', padding: '10px'}}>
+    <Card style= {{backgroundColor: '#ffffff', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}}sx={{ display: 'flex', padding: '10px'}}>
             <CardMedia
             component="img"
             sx={{ width: 151 }}
@@ -29,6 +31,8 @@ export default function CartCards({title, price, image, rating}) {
             <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
             </Box>
           </Box>
+          <Divider orientation="vertical" variant="middle" flexItem />
+          <Typography style={{backgroundColor: '#ffffff', color:'#adb3ab', paddingLeft: '15px'}}>{description}</Typography>
         </Card>
   );
 }
