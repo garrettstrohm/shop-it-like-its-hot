@@ -1,8 +1,13 @@
 
+
 import { Typography } from "@mui/material"
+
+import Button from '@mui/material/Button';
+
 import { useContext} from "react"
 import CartCards from "./CartCards"
 import {CartContext} from './context/cartState'
+import { Link } from 'react-router-dom';
 
 
 function Cart(){
@@ -27,6 +32,7 @@ function Cart(){
                 <hr style={{borderColor:'#1976d2'}}/>
                 {cartItemsList} 
             </div>
+            <Link to="/checkout" style={{textDecoration: 'none'}}><Button variant="contained">Proceed to Checkout</Button></Link>
         </>
     );
 }
