@@ -43,7 +43,7 @@ export default function ItemCards({title, price, description, category, image, r
                 {ratingObj.rate}⭐️ 
               </Typography>
               <br/>
-              <Button variant="contained">
+              <Button onClick = {()=> sendToCart(id)} variant="contained">
               <AddShoppingCartIcon/>  Add to Cart  
               </Button>
             </CardContent>

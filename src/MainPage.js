@@ -1,12 +1,15 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Filter from './Filter'
+import Cart from './Cart'
 import {useEffect, useState} from "react"
 
-function MainPage({search}){
+
+function MainPage({search, sendToCart}){
     const [items, setItems] = useState([])
     const[copyOfItems, setCopyOfItems] = useState([])
     const[categorySelect, setCategorySelect] = useState("All")
+    
     
     console.log(search)
 
@@ -25,10 +28,6 @@ function MainPage({search}){
         return item.category === categorySelect
     })
 
- function sendToCart() {
-        console.log("Sending to Cart")
-    }
-
     
     function handleCategoryChange(event){
         setCategorySelect(event.target.value)
@@ -41,6 +40,7 @@ function MainPage({search}){
             <Filter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
             <Sort />
+            <Cart />
         </div>
     )
 }

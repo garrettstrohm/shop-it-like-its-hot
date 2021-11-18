@@ -10,11 +10,11 @@ import CardHeader from '@mui/material/CardHeader';
 
 
 
-export default function ItemDetails(){
+export default function ItemDetails({sendToCart}){
     const itemId = useParams().id
 
     const {content, isLoaded} = useFetch(`http://localhost:4000/products/${itemId}`)
-    const {title, price, description, category, image, rating} = content
+    const {title, price, description, category, image, rating, id} = content
 
 
     if(!isLoaded) return <div>Loading...</div>
@@ -32,7 +32,7 @@ export default function ItemDetails(){
                      <h2>Price: ${price}</h2> 
                      <h2>Rating: {rating.rate} ⭐️ </h2>
                      <Stack direction='row' spacing={2}>
-                         <Button color="primary" variant="contained" aria-label="add to shopping cart">
+                         <Button onClick = {()=>sendToCart(id)} color="primary" variant="contained" aria-label="add to shopping cart">
                              <AddShoppingCartIcon />
                          </Button>
                         <Button variant="contained">Buy Now</Button>
