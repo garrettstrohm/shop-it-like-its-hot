@@ -73,7 +73,7 @@ export default function NavBar({search, setSearch, onChangePage}) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Shop It Like It's Hot!  🔥🔥🔥
+            <img src=''></img>
           </Typography>
           
           <Stack direction="row" spacing={2}>
