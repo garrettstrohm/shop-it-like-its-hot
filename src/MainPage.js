@@ -6,7 +6,6 @@ import {useEffect, useState} from "react"
 
 function MainPage({search, sendToCart}){
     const [items, setItems] = useState([])
-    const[copyOfItems, setCopyOfItems] = useState([])
     const[categorySelect, setCategorySelect] = useState("All")
     
     
@@ -17,7 +16,6 @@ function MainPage({search, sendToCart}){
         .then(r => r.json())
         .then(itemsArray => {
             setItems(itemsArray)
-            setCopyOfItems(itemsArray)
         })
     }, [])
 

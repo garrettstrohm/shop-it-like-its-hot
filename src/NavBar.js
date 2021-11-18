@@ -54,10 +54,6 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function NavBar({search, setSearch, onChangePage}) {
 
-  function handleLinkClick(e){
-    e.preventDefault();
-    onChangePage(e.target.pathname)
-  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{boxShadow: "1px 3px 6px 2px #9E9E9E"}}>

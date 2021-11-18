@@ -6,7 +6,6 @@ import Card from '@mui/material/Card';
 import {useParams} from 'react-router-dom'
 import useFetch from './hooks/useFetch'
 import Typography from '@mui/material/Typography'; 
-import CardHeader from '@mui/material/CardHeader';
 
 
 
