@@ -241,9 +241,7 @@
       }
     }
   ],
-  
   "cart": [],
-
   "user": [
     {
       "id": 1,
@@ -261,7 +259,6 @@
       "ccv": ""
     }
   ],
-
   "orderHistory": {
     "user": {
       "id": 1,
@@ -275,22 +272,10 @@
       "country": "US",
       "cardName": "Garrett Strohm",
       "cardNumber": "1234123412341234",
-      "expDate": "1234",
-      "ccv": "132"
+      "expDate": "1324",
+      "ccv": "123"
     },
     "products": [
-      {
-        "id": 18,
-        "title": "MBJ Women's Solid Short Sleeve Boat Neck V ",
-        "price": 9.85,
-        "description": "95% RAYON 5% SPANDEX, Made in USA or Imported, Do Not Bleach, Lightweight fabric with great stretch for comfort, Ribbed on sleeves and neckline / Double stitching on bottom hem",
-        "category": "women's clothing",
-        "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-        "rating": {
-          "rate": 4.7,
-          "count": 130
-        }
-      },
       {
         "id": 19,
         "title": "Opna Women's Short Sleeve Moisture",
