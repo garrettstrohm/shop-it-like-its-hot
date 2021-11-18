@@ -1,16 +1,12 @@
 
 import Checkout from "./Checkout"
-import {useEffect, useState, createContext} from "react"
+import {useEffect, useState} from "react"
 import CartCards from "./CartCards"
 
-const CartContext = createContext()
 
 
-
-function Cart({children}){
+function Cart(){
     const [cart, setCart] = useState([])
-   return <CartContext.Provider value = {{cart,setCart}}>{children}</CartContext.Provider>
-   
     
     useEffect(() => {
         fetch('http://localhost:4000/cart')
