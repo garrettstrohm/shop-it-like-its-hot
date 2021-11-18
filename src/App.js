@@ -9,6 +9,7 @@ import ItemDetails from './ItemDetails'
 import OrderHistory from './OrderHistory';
 import { CartContext } from './context/cartState';
 
+
 function App() {
   const [search, setSearch] = useState("")
   const {cart, setCart} = useContext(CartContext)
@@ -18,6 +19,7 @@ function App() {
     .then(r => r.json())
     .then(items => setCart(items))
   }, [])
+
 
   function sendToCart(id) {
     console.log("id:",id)

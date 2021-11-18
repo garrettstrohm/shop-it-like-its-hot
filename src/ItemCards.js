@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -8,9 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import Divider from '@mui/material/Divider';
-import ItemDetails from "./ItemDetails"
-import Cart from "./Cart"
-import {Route, Switch, Link} from 'react-router-dom'
+import {Switch, Link} from 'react-router-dom'
 
 export default function ItemCards({title, price, description, category, image, ratingObj, sendToCart, id}){
 
