@@ -16,6 +16,7 @@ export default function OrderHistory() {
     const {orderHistory, setOrderHistory} = useContext(OrderHistoryContext)
     const [isLoaded, setIsLoaded] = useState(false)
 
+
     useEffect(() => {
         fetch('http://localhost:4000/orderHistory')
         .then(r => r.json())
