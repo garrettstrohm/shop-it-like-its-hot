@@ -8,12 +8,14 @@ import Typography from '@mui/material/Typography';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import { OrderNumberContext } from './context/orderNumber';
 
 
 
 export default function OrderHistory() {
 
     const {orderHistory, setOrderHistory} = useContext(OrderHistoryContext)
+    const {orderNumber} = useContext(OrderNumberContext)
     const [isLoaded, setIsLoaded] = useState(false)
 
 
@@ -50,6 +52,7 @@ export default function OrderHistory() {
             }} 
         >   
             <h1 style={{"textAlign": "center"}}>Order History</h1>
+            <h3>Order Number: #{orderNumber}</h3>
             {isLoaded ? <List disablePadding>
                 {orderHistoryProducts.map((product) => (
                     <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
