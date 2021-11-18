@@ -4,7 +4,7 @@ import CartCards from "./CartCards"
 import {CartContext} from './context/cartState'
 
 function Cart(){
-    const {cart} = useContext(CartContext)
+    const {cart, setCart} = useContext(CartContext)
     
     const cartItemsList = cart.map(item => <CartCards key={item.title} id={item.id} title={item.title} price={item.price} image={item.image} rating={item.rating.rate} description={item.description} handleDelete={handleDelete} setCart={setCart}/>)
 
