@@ -13,7 +13,7 @@ export default function ItemDetails({sendToCart}){
     const itemId = useParams().id
 
     const {content, isLoaded} = useFetch(`http://localhost:4000/products/${itemId}`)
-    const {title, price, description, category, image, rating, id} = content
+    const {title, price, description, image, rating, id} = content
 
 
     if(!isLoaded) return <div>Loading...</div>

@@ -24,7 +24,7 @@ export default function OrderHistory() {
             setOrderHistory(data)
             setIsLoaded(true)
         })
-    }, [])
+    }, [setOrderHistory])
 
     const orderHistoryProducts = orderHistory.products
   
