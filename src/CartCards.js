@@ -14,11 +14,11 @@ export default function CartCards({title, price, image, rating, description, id,
     <Card style= {{backgroundColor: '#ffffff', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}}sx={{ display: 'flex', padding: '10px'}}>
             <CardMedia
             component="img"
-            sx={{ width: 151 }}
+            sx={{ width: 150 }}
             image={image}
             alt="imgAlt"
           />
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', minWidth:500, maxHeight:50}}>
             <CardContent sx={{ flex: '1 0 auto' }}>
               <Typography component="div" variant="h5">
                 {title}
@@ -30,8 +30,8 @@ export default function CartCards({title, price, image, rating, description, id,
                 {rating}⭐️ 
               </Typography>
             </CardContent>
-            <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
-              <Button onClick={()=> handleDelete(id)}>Remove From Cart</Button>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'flex-end', mr:3,  pl: 1, pb: 1 }}>
+              <Button variant="outlined" sx={{}} onClick={()=> handleDelete(id)}>Remove From Cart</Button>
             </Box>
           </Box>
           <Divider orientation="vertical" variant="middle" flexItem />
