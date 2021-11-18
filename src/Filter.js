@@ -25,6 +25,7 @@ function Filter({handleCategoryChange}){
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               label="Category"
+              defaultValue="All"
               onChange={handleCategoryChange}
             >
               {/* <MenuItem value="Select A Category"><em>Select a category...</em></MenuItem> */}

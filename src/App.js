@@ -18,7 +18,7 @@ function App() {
     fetch('http://localhost:4000/cart')
     .then(r => r.json())
     .then(items => setCart(items))
-  }, [])
+  }, [setCart])
 
 
   function sendToCart(id) {

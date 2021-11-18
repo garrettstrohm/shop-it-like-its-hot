@@ -11,8 +11,6 @@ function handleOnChange(e){
     setFormData({...formData, [e.target.name]: e.target.value})
 }
 
-console.log(formData)
-
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
