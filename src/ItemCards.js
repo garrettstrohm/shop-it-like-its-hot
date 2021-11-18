@@ -21,12 +21,12 @@ export default function ItemCards({title, price, description, category, image, r
 
             <CardMedia
             component="img"
-            sx={{ width: 151 }}
+            sx={{ maxWidth: 200, maxHeight:250 }}
             image={image}
             alt="imgAlt"
           />
 
-          <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', minWidth:450}}>
             <CardContent sx={{ flex: '1 0 auto' }}>
               <Switch>  
               <Link to={`/itemdetails/${id}`} style= {{textDecoration: 'none', color:'#000000'}}variant="h5">  
@@ -44,7 +44,7 @@ export default function ItemCards({title, price, description, category, image, r
               <AddShoppingCartIcon/>  Add to Cart  
               </Button>
             </CardContent>
-            <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'center', pl: 1, pb: 1 }}>
             </Box>
           </Box>
           <Divider orientation="vertical" variant="middle" flexItem />
