@@ -1,7 +1,6 @@
 import ItemContainer from './ItemContainer'
 import Sort from './Sort'
 import Filter from './Filter'
-import Cart from './Cart'
 import {useEffect, useState} from "react"
 
 
@@ -40,7 +39,6 @@ function MainPage({search, sendToCart}){
             <Filter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
             <Sort />
-            <Cart />
         </div>
     )
 }
