@@ -6,7 +6,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Grid from '@mui/material/Grid';
 
 
-export default function Review({formData, products, totalPrice}) {
+export default function Review({formData, cart, totalPrice}) {
 
   const { firstName, lastName, address1, address2, city, state, zip, country, cardName, cardNumber, expDate, ccv} = formData
   const lastFourDigits = cardNumber.substr(-4)
@@ -17,7 +17,7 @@ export default function Review({formData, products, totalPrice}) {
         Order summary
       </Typography>
       <List disablePadding>
-        {products.map((product) => (
+        {cart.map((product) => (
           <ListItem key={product.title} sx={{ py: 1, px: 0 }}>
             <img style={{height: 125, width: 200, margin: 20}} src={product.image} alt={product.title} />
             <ListItemText primary={product.title} secondary={product.description} />
