@@ -13,6 +13,12 @@ function App() {
   const [search, setSearch] = useState("")
   const {cart, setCart} = useContext(CartContext)
 
+  useEffect(() => {
+    fetch('http://localhost:4000/cart')
+    .then(r => r.json())
+    .then(items => setCart(items))
+  }, [])
+
   function sendToCart(id) {
     console.log("id:",id)
     fetch(`http://localhost:4000/products/${id}`)
