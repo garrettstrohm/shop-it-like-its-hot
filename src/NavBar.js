@@ -6,7 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-
+import { Button } from '@mui/material';
+import { Stack } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -50,7 +52,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({search, setSearch}) {
+export default function NavBar({search, setSearch, onChangePage}) {
+
+  function handleLinkClick(e){
+    e.preventDefault();
+    onChangePage(e.target.pathname)
+  }
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{boxShadow: "1px 3px 6px 2px #9E9E9E"}}>
@@ -72,6 +79,13 @@ export default function NavBar({search, setSearch}) {
           >
             Shop It Like It's Hot!  🔥🔥🔥
           </Typography>
+          
+          <Stack direction="row" spacing={2}>
+            <Link style={{textDecoration: 'none'}} to="/"><Button sx={{color: "white", borderColor:"white"}} variant="outlined">Home</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/cart"><Button  sx={{color: "white", borderColor:"white"}} variant="outlined">View Cart</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/Orders"><Button sx={{color: "white", borderColor:"white"}} variant="outlined">Order History</Button></Link>
+          </Stack>
+         
           <Search value={search} onChange={(e) => setSearch(e.target.value)}>
             <SearchIconWrapper>
             </SearchIconWrapper>

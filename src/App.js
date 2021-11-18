@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar search={search} setSearch={setSearch}/>
+      <NavBar search={search} onChangePage={setSearch}/>
       <Switch>
         <Route path="/checkout">
           <Checkout />
