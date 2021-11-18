@@ -8,11 +8,13 @@ import Checkout from './Checkout';
 import ItemDetails from './ItemDetails'
 import OrderHistory from './OrderHistory';
 import { CartContext } from './context/cartState';
+import {OrderNumberContext} from './context/orderNumber'
 
 
 function App() {
   const [search, setSearch] = useState("")
   const {cart, setCart} = useContext(CartContext)
+  const{orderNumber, setOrderNumber} = useContext(OrderNumberContext)
 
   useEffect(() => {
     fetch('http://localhost:4000/cart')
@@ -20,6 +22,11 @@ function App() {
     .then(items => setCart(items))
   }, [setCart])
 
+  useEffect(() => {
+    setOrderNumber(Math.floor(Math.random() * 100000000))
+  }, [setOrderNumber])
+
+  console.log(orderNumber)
 
   function sendToCart(id) {
     console.log("id:",id)
