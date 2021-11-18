@@ -1,7 +1,8 @@
-
+import Button from '@mui/material/Button';
 import { useContext} from "react"
 import CartCards from "./CartCards"
 import {CartContext} from './context/cartState'
+import { Link } from 'react-router-dom';
 
 function Cart(){
     const {cart, setCart} = useContext(CartContext)
@@ -26,6 +27,7 @@ function Cart(){
                 <h1>Cart</h1>
                 {cartItemsList} 
             </div>
+            <Link to="/checkout" style={{textDecoration: 'none'}}><Button variant="contained">Proceed to Checkout</Button></Link>
         </>
     );
 }
