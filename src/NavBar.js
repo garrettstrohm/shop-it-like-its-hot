@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import {Link} from "react-router-dom"
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -72,7 +72,6 @@ export default function NavBar({search, setSearch}) {
           >
             Shop It Like It's Hot!  🔥🔥🔥
           </Typography>
-          <Link to="/cart">View Cart</Link>
           <Search value={search} onChange={(e) => setSearch(e.target.value)}>
             <SearchIconWrapper>
             </SearchIconWrapper>
