@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,7 +16,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm';
 import Review from './Review';
-import Cart from './Cart';
+import {CartContext} from "./context/cartState"
 
 
 
@@ -41,7 +41,7 @@ const theme = createTheme();
 
 export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
-  const [products, setProducts] = useState([])
+  const {cart, setCart} = useState(CartContext)
   const [orderHistory, setOrderHistory] = useState([])
   const [formData, setFormData] = useState({
     "firstName": "",
@@ -63,14 +63,14 @@ export default function Checkout() {
     fetch('http://localhost:4000/cart')
     .then(r => r.json())
     .then(productsInCart => {
-      setProducts(productsInCart)
+      setCart(productsInCart)
     })
   }, [])
 
   function createTotalPrice(){
     let total = 0;
-    for(let i = 0; i < products.length; i++) {
-      total += products[i].price;
+    for(let i = 0; i < cart.length; i++) {
+      total += cart[i].price;
     }
     return total;
   }
@@ -95,9 +95,9 @@ export default function Checkout() {
     .then(console.log)
   }
 
-  function emptyCart(products){
-    for(let i = 0; i < products.length; i++) {
-      deleteCartItems(products[i])
+  function emptyCart(cart){
+    for(let i = 0; i < cart.length; i++) {
+      deleteCartItems(cart[i])
     }
   }
 
@@ -110,7 +110,7 @@ export default function Checkout() {
       },
       body: JSON.stringify({
         user: formData,
-        products: products,
+        products: cart,
       })
     })
     .then(r => r.json())
@@ -127,7 +127,7 @@ function getStepContent(step) {
     case 1:
       return <PaymentForm formData={formData} setFormData={setFormData}/>;
     case 2:
-      return <Review formData={formData} products={products} totalPrice={createTotalPrice}/>;
+      return <Review formData={formData} cart={cart} totalPrice={createTotalPrice}/>;
     default:
       throw new Error('Unknown step');
   }
@@ -138,7 +138,7 @@ function getStepContent(step) {
     if(activeStep < 2){
       handleSubmit(formData)
     } else {
-      postToOrderHistory(products)
+      postToOrderHistory(cart)
       handleSubmit({
         "firstName": "",
         "lastName": "",
@@ -153,7 +153,7 @@ function getStepContent(step) {
         "expDate": "",
         "ccv": ""
       })
-      emptyCart(products)
+      emptyCart(cart)
     }
   };
 
