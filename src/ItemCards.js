@@ -40,7 +40,7 @@ export default function ItemCards({title, price, description, category, image, r
                 {ratingObj.rate}⭐️ 
               </Typography>
               <br/>
-              <Button onClick = {()=> sendToCart(id)} variant="contained">
+              <Button onClick = {()=> sendToCart(id)} variant="contained" style={{backgroundColor:"#ea6050"}}>
               <AddShoppingCartIcon/>  Add to Cart  
               </Button>
             </CardContent>
