@@ -50,7 +50,7 @@ export default function OrderHistory() {
             height: '100vh',
             width: '50vw', 
             margin: 10,
-            marginTop: '125px',
+            marginTop: '185px',
             padding: 5,
             boxShadow: '2px 2px 5px 2px rgba(0, 0, 0, .2)'
             }} 
