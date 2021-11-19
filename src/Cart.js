@@ -4,7 +4,7 @@ import { Typography } from "@mui/material"
 
 import Button from '@mui/material/Button';
 
-import { useContext} from "react"
+import { useContext, useEffect} from "react"
 import CartCards from "./CartCards"
 import {CartContext} from './context/cartState'
 import { Link } from 'react-router-dom';
@@ -21,7 +21,11 @@ function Cart(){
         setCart(updatedItemList)
     }
 
-   
+   useEffect(() => {
+       fetch('http://localhost:4000/cart')
+       .then(r => r.json())
+       .then(items => setCart(items))
+   }, [setCart])
 
     return(
         <>
