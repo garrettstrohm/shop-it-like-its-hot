@@ -8,3 +8,9 @@ function CartProvider({children}) {
 }
 
 export {CartContext, CartProvider}
+
+
+
+
+
+

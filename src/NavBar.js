@@ -9,7 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import { Button } from '@mui/material';
 import { Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
-import logo from './assets/finalLogo.png'
+import logo from './assets/lastLogo.gif'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -75,7 +75,8 @@ export default function NavBar({search, setSearch}) {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             
-            <img src= { logo } alt='mlimg' style = {{width: '250px', height: '80px'}}/>
+            {/* <img src= { logo } alt='mlimg' style = {{width: '250px', height: '80px'}}/> */}
+            <img src= { logo } alt='mlimg' style = {{width: '250px', height: '110px', position: 'relative', bottom: '20px'}}/>
             
 
           </Typography>
