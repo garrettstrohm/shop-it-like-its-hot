@@ -17,6 +17,7 @@ import PaymentForm from './PaymentForm';
 import Review from './Review';
 import {CartContext} from "./context/cartState"
 import {OrderHistoryContext} from "./context/OrderHistoryState"
+import {OrderNumberContext} from "./context/orderNumber"
 
 
 
@@ -43,6 +44,7 @@ export default function Checkout() {
   const [activeStep, setActiveStep] = React.useState(0);
   const {cart} = useContext(CartContext)
   const {setOrderHistory} = useContext(OrderHistoryContext)
+  const {orderNumber} = useContext(OrderNumberContext)
   const [formData, setFormData] = useState({
     "firstName": "",
     "lastName": "",
@@ -185,7 +187,7 @@ function getStepContent(step) {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
+                  Your order number is #{orderNumber}. We have emailed your order
                   confirmation, and will send you an update when your order has
                   shipped.
                 </Typography>

@@ -9,12 +9,15 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Card from '@mui/material/Card';
+import { OrderNumberContext } from './context/orderNumber';
+
 
 
 
 export default function OrderHistory() {
 
     const {orderHistory, setOrderHistory} = useContext(OrderHistoryContext)
+    const {orderNumber} = useContext(OrderNumberContext)
     const [isLoaded, setIsLoaded] = useState(false)
 
 
@@ -52,6 +55,7 @@ export default function OrderHistory() {
             }} 
         >   
             <h1 style={{"textAlign": "center"}}>Order History</h1>
+            <h3>Order Number: #{orderNumber}</h3>
             {isLoaded ? <List disablePadding>
               <Card style = {{padding: "20px", boxShadow: "1px 3px 6px 2px #9E9E9E"}}>
                 {orderHistoryProducts.map((product) => (
