@@ -54,8 +54,8 @@ export default function OrderHistory() {
             boxShadow: '2px 2px 5px 2px rgba(0, 0, 0, .2)'
             }} 
         >   
-            <h1 style={{"textAlign": "center"}}>Order History</h1>
-            <h3>Order Number: #{orderNumber}</h3>
+            <h1 style={{"textAlign": "center", color: "#2A3459"}}>Order History</h1>
+            <h3 style={{color: "#2A3459"}}>Order Number: #{orderNumber}</h3>
             {isLoaded ? <List disablePadding>
               <Card style = {{padding: "20px", boxShadow: "1px 3px 6px 2px #9E9E9E"}}>
                 {orderHistoryProducts.map((product) => (
@@ -69,8 +69,8 @@ export default function OrderHistory() {
         ))}
            
         <ListItem sx={{ py: 1, px: 0 }}>
-          <ListItemText primary="Total" />
-          <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+          <ListItemText style={{color: "#2A3459"}} primary="Total" />
+          <Typography style={{color: "#2A3459"}} variant="subtitle1" sx={{ fontWeight: 700 }}>
             ${createTotalPrice()}
           </Typography>
         </ListItem>

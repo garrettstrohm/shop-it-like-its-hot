@@ -27,12 +27,12 @@ function Cart(){
         <>
             <div>
                 <Typography>
-                    <h1 style={{display:'flex', justifyContent:'center'}}>View Your Cart</h1>
+                    <h1 style={{display:'flex', justifyContent:'center', color: "#2A3459"}}>View Your Cart</h1>
                 </Typography>
-                <hr style={{borderColor:'#1976d2'}}/>
+                <hr style={{borderColor:'#2A3459'}}/>
                 {cartItemsList} 
             </div>
-            <Link to="/checkout" style={{textDecoration: 'none'}}><Button variant="contained">Proceed to Checkout</Button></Link>
+            <Link to="/checkout" style={{textDecoration: 'none'}}><Button style ={{color:'#ffffff', backgroundColor:'#e57c70'}} variant="contained">Proceed to Checkout</Button></Link>
         </>
     );
 }

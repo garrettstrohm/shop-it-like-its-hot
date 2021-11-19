@@ -53,7 +53,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function NavBar({search, setSearch, onChangePage}) {
+export default function NavBar({search, setSearch}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>

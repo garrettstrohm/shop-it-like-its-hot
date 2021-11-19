@@ -31,7 +31,7 @@ export default function CartCards({title, price, image, rating, description, id,
               </Typography>
             </CardContent>
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'flex-end', mr:3,  pl: 1, pb: 1 }}>
-              <Button variant="outlined" sx={{}} onClick={()=> handleDelete(id)}>Remove From Cart</Button>
+              <Button style ={{color:'#ffffff', backgroundColor:'#e57c70'}} variant="contained" sx={{}} onClick={()=> handleDelete(id)}>Remove From Cart</Button>
             </Box>
           </Box>
           <Divider orientation="vertical" variant="middle" flexItem />

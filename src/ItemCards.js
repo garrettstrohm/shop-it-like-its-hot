@@ -47,7 +47,7 @@ export default function ItemCards({title, price, description, category, image, r
             <Box sx={{ display: 'flex', alignItems: 'center', justifyContent:'center', pl: 1, pb: 1 }}>
             </Box>
           </Box>
-          <Divider orientation="vertical" variant="middle" flexItem />
+          <Divider style = {{backgroundColor:'#2A3459'}} orientation="vertical" variant="middle" flexItem />
           <Typography style={{backgroundColor: '#ffffff', color:'#adb3ab', paddingLeft: '15px'}}>{description}</Typography>
         </Card>
       );
