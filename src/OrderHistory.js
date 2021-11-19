@@ -37,7 +37,7 @@ export default function OrderHistory() {
         for(let i = 0; i < orderHistoryProducts.length; i++) {
           total += orderHistoryProducts[i].price;
         }
-        return total;
+        return parseFloat(total).toFixed(2);
       }
 
   return (

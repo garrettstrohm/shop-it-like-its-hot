@@ -66,7 +66,7 @@ export default function Checkout() {
     for(let i = 0; i < cart.length; i++) {
       total += cart[i].price;
     }
-    return total;
+    return parseFloat(total).toFixed(2);
   }
 
   function handleSubmit(formData){
