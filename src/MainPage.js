@@ -1,5 +1,4 @@
 import ItemContainer from './ItemContainer'
-import Sort from './Sort'
 import Filter from './Filter'
 import {useEffect, useState} from "react"
 
@@ -30,10 +29,9 @@ function MainPage({search, sendToCart}){
 
 
     return(
-        <div>
+        <div style = {{position: 'absolute', marginTop: '100px'}}>
             <Filter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
-            <Sort />
         </div>
     )
 }
