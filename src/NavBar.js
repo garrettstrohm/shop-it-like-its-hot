@@ -9,6 +9,7 @@ import InputBase from '@mui/material/InputBase';
 import { Button } from '@mui/material';
 import { Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
+import logo from './assets/finalLogo.png'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,7 +57,7 @@ export default function NavBar({search, setSearch, onChangePage}) {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" style={{boxShadow: "1px 3px 6px 2px #9E9E9E"}}>
+      <AppBar position="static" style={{boxShadow: "1px 3px 6px 2px #9E9E9E", backgroundColor: '#2A3459'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -65,7 +66,7 @@ export default function NavBar({search, setSearch, onChangePage}) {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-
+            
           </IconButton>
           <Typography
             variant="h6"
@@ -73,16 +74,19 @@ export default function NavBar({search, setSearch, onChangePage}) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Shop It Like It's Hot!  🔥🔥🔥
+            
+            <img src= { logo } alt='mlimg' style = {{width: '250px', height: '80px'}}/>
+            
+
           </Typography>
           
           <Stack direction="row" spacing={2}>
-            <Link style={{textDecoration: 'none'}} to="/"><Button sx={{color: "white", borderColor:"white"}} variant="outlined">Home</Button></Link>
-            <Link style={{textDecoration: 'none'}} to="/cart"><Button  sx={{color: "white", borderColor:"white"}} variant="outlined">View Cart</Button></Link>
-            <Link style={{textDecoration: 'none'}} to="/orderhistory"><Button sx={{color: "white", borderColor:"white"}} variant="outlined">Order History</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/"><Button sx={{color: "#e57c70", borderColor:"#e57c70"}} variant="outlined">Home</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/cart"><Button  sx={{color: "#e57c70", borderColor:"#e57c70"}} variant="outlined">View Cart</Button></Link>
+            <Link style={{textDecoration: 'none'}} to="/orderhistory"><Button sx={{color: "#e57c70", borderColor:"#e57c70"}} variant="outlined">Order History</Button></Link>
           </Stack>
          
-          <Search value={search} onChange={(e) => setSearch(e.target.value)}>
+          <Search style ={{color:'#e57c70'}}  value={search} onChange={(e) => setSearch(e.target.value)}>
             <SearchIconWrapper>
             </SearchIconWrapper>
             <StyledInputBase

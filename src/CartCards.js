@@ -18,7 +18,7 @@ export default function CartCards({title, price, image, rating, description, id,
             image={image}
             alt="imgAlt"
           />
-          <Box sx={{ display: 'flex', flexDirection: 'column', minWidth:500, maxHeight:50}}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', minWidth:500, maxHeight:250}}>
             <CardContent sx={{ flex: '1 0 auto' }}>
               <Typography component="div" variant="h5">
                 {title}
