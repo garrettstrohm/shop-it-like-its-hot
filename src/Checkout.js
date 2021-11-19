@@ -166,6 +166,7 @@ function getStepContent(step) {
           position: 'relative',
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
+       
       >
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
@@ -175,7 +176,7 @@ function getStepContent(step) {
           </Typography>
           <Stepper activeStep={activeStep} sx={{ pt: 3, pb: 5 }}>
             {steps.map((label) => (
-              <Step key={label}>
+              <Step  key={label}>
                 <StepLabel>{label}</StepLabel>
               </Step>
             ))}
@@ -197,12 +198,13 @@ function getStepContent(step) {
                 {getStepContent(activeStep)}
                 <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   {activeStep !== 0 && (
-                    <Button onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
+                    <Button  style ={{color: '#ffffff', backgroundColor:'#e57c70'}} onClick={handleBack} sx={{ mt: 3, ml: 1 }}>
                       Back
                     </Button>
                   )}
 
                   <Button
+                   style ={{backgroundColor:'#e57c70'}}
                     variant="contained"
                     onClick={handleNext}
                     sx={{ mt: 3, ml: 1 }}
