@@ -29,7 +29,7 @@ function MainPage({search, sendToCart}){
 
 
     return(
-        <div style = {{position: 'absolute', marginTop: '100px'}}>
+        <div style = {{position: 'relative', marginTop: '100px'}}>
             <Filter handleCategoryChange={handleCategoryChange}/>
             <ItemContainer items = {itemsToDisplay} sendToCart = {sendToCart} />
         </div>
