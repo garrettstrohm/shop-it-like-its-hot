@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar search={search} onChangePage={setSearch}/>
+      <NavBar search={search} setSearch={setSearch}/>
       <Switch>
         <Route path="/orderhistory">
           <OrderHistory />
