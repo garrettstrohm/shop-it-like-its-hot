@@ -9,6 +9,7 @@ import ItemDetails from './ItemDetails'
 import OrderHistory from './OrderHistory';
 import { CartContext } from './context/cartState';
 import {OrderNumberContext} from './context/orderNumber'
+import Error from './Error'
 
 
 function App() {
@@ -61,8 +62,11 @@ function App() {
         <Route path="/itemdetails/:id">
           <ItemDetails sendToCart = {sendToCart}/>
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <MainPage search={search} sendToCart = {sendToCart}/>
+        </Route>
+        <Route path="*"> 
+          <Error />
         </Route>
       </Switch>
     </div>

@@ -27,7 +27,7 @@ function Cart(){
         <>
             <div>
                 <Typography>
-                    <h1 style={{display:'flex', justifyContent:'center', color: "#2A3459"}}>View Your Cart</h1>
+                    <h1 style={{display:'flex', marginTop: '100px', justifyContent:'center', color: "#2A3459"}}>View Your Cart</h1>
                 </Typography>
                 <hr style={{borderColor:'#2A3459'}}/>
                 {cartItemsList} 

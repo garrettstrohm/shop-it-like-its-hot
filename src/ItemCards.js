@@ -17,7 +17,7 @@ export default function ItemCards({title, price, description, category, image, r
     return(
       
 
-        <Card style= {{backgroundColor: '#ffffff', marginBottom: '10px', marginLeft: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}} sx={{ display: 'flex', padding: '10px'}}>
+        <Card style= {{backgroundColor: '#ffffff', marginBottom: '10px', marginLeft: '10px', marginRight: '10px', boxShadow: "1px 3px 6px 2px #9E9E9E"}} sx={{ display: 'flex', padding: '10px'}}>
 
             <CardMedia
             component="img"
