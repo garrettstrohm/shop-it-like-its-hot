@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Shop-It-Like-It's-Hot E-Commerce Site
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+E-commerce is all the rage these days, and how most companies primarily generate revenue. Shop-It-Like-It's-Hot was developed to be a lightweight e-commerce site that could easily be adapted to be used for any business. 
 
-## Available Scripts
+## Technologies
+This project uses the following technologies:
+- Frontend: React.js and Material Ui
+- Backend: db.json package
 
-In the project directory, you can run:
+## Launch
 
-### `npm start`
+Launch frontend
+```
+$ npm install
+$ npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Launch backend
+```
+$ json-server --w db.json --port 4000
+```
+Navigate
+```
+localhost:3000/
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Features
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img width="1437" alt="Screen Shot 2022-01-31 at 3 32 35 PM" src="https://user-images.githubusercontent.com/89401426/151884315-2e240cae-14a0-428b-aa38-6def6a696a53.png">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Home Page
+Users can:
+- Add items to their cart
+- View, Search, and Filter items
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<img width="1437" alt="Screen Shot 2022-01-31 at 3 33 25 PM" src="https://user-images.githubusercontent.com/89401426/151884399-35bdd58c-e33b-42a9-b135-99d57ce3ecf7.png">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Item Page
+Users can:
+- View item details
+- Add item to cart
+- Buy item now
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img width="1437" alt="Screen Shot 2022-01-31 at 3 33 36 PM" src="https://user-images.githubusercontent.com/89401426/151884514-421baf5d-3e2d-42b4-b2d3-f539738ba993.png">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+### Cart
+Users can:
+- Delete items from cart
+- Proceed to checkout
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="1437" alt="Screen Shot 2022-01-31 at 3 33 49 PM" src="https://user-images.githubusercontent.com/89401426/151885201-72b271a3-9479-4bb1-ac5c-d4099472517f.png">
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Checkout
+Users can:
+- Fill out a three part form and confirm their order
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Screen Shot 2022-01-31 at 3 43 03 PM](https://user-images.githubusercontent.com/89401426/151885319-b81efa0f-62c2-4d73-b7d3-0858b094d5d8.png)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Order History
+Users can: 
+- View order history
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Video Demo
+https://www.youtube.com/watch?v=QDb5Xh7JmSo&t=6s
 
-### Deployment
+## Created By
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Garrett Strohm
+- Github: <a href="https://github.com/garrettstrohm/">garrettstrohm</a>
+- LinkedIn: <a href='https://www.linkedin.com/in/gstrohm/'>Garrett Strohm's LinkedIn</a>
+- Email: <a href='mailto: garres4@vt.edu'>garres4@vt.edu</a>
+- Medium: <a href='https://medium.com/@garres4'>@garres4</a>
 
-### `npm run build` fails to minify
+### Bubba Godinet
+- Github: <a href="https://github.com/BubbaGodinet/">BubbaGodinet</a>
+- LinkedIn: <a href="https://www.linkedin.com/in/vito-godinet-5a7113177/">Bubba Godinet's LinkedIn</a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Nicholas Fagner
+- Github: <a href="https://github.com/geosynchro">geosynchro</a>
+- LinkedIn: <a href="https://www.linkedin.com/in/nicholas-fagner/">Nicholas Fagner's LinkedIn</a>
